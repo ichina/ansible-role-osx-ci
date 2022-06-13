@@ -34,7 +34,7 @@
     homebrew.sh {{ ansible_become_user | default(ansible_ssh_user) }}
     {{ ansible_become_pass }}
   args:
-    creates: '/usr/local/bin/brew'
+    creates: "/usr/local/bin/brew"
 
 - name: Update Homebrew
   homebrew:
@@ -62,7 +62,7 @@
     name: "{{ homebrew_packages }}"
   when: homebrew_packages is defined
 
-- name: Installing node 10 LTS
+- name: Installing node 16 LTS
   homebrew:
-    name: node@10
-  notify: Link Node 10 LTS
+    name: node@16
+  notify: Link Node 16 LTS
